@@ -1,0 +1,17 @@
+# Python-related files and directories
+__pycache__
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Docker-related files and directories
+*.log  # Docker container logs
+*.tar  # Docker image archives
+
+# Editor/IDE files (add more if needed)
+.vscode/
+.idea/
+*.swp
+*.swo

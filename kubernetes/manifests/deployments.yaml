@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telebot
+  labels:
+    app: telebot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telebot
+  template:
+    metadata:
+      labels:
+        app: telebot
+    spec:
+      containers:
+      - name: telebot
+        image: hovo4686/telebot:linux_v1.0
+        envFrom:
+          - secretRef:
+              name: secret-token
+        command: [ "python" ]
+        args: ["bot.py"]
+        ports:
+        - containerPort: 80
